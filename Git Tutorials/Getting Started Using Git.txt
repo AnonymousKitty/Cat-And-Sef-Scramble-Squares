@@ -1,0 +1,156 @@
+Getting started using Git 
+
+-- Document Terms/Definitions
+
+anything following * is an explanation 
+
+anything following -> is a command to run in the terminal
+
+anything following !-> is an example of the command(s) given above it
+
+anything following & is an action to perform on your personal device
+
+anything inside [] is to be replaced with your own info. do not keep the [] when writing the code in your terminal
+
+-- What is Git?
+
+* free open sourced source control management
+* manage changed to files over time
+* allows you to see and jump back to past changes
+* allows you to create branches to modify then merge to main branch when you are satisfied with changes
+* can use any terminal on the computer, but comes with its own called Git Bash
+
+-- What is a branch (in terms of git)?
+
+* a copy of your main git repo with all previous commits
+* allows you to go work on a feature without affecting the main branch
+* allows multiple people to work on different features without affecting eachothers work
+* allows you to merge your changes to the main branch once you are satisfied with the changes
+
+-- What is GitHub?
+
+* location to host your Git repos in the cloud
+* lets you track issues, assign features to different ppl, set up kanban boards, and more
+* github has instructions on the website you can follow to easily create a new repo or push an existing repo to github
+
+-- How to Use Git
+
+* in the terminal of your choosing do the following:
+
+* to view detailed explanations of any git command type:
+-> git help [command]
+* to view all command options with a short description of its function type:
+-> git [known commands] -h
+!-> git config -h
+
+
+* start by specifying name and email address to register who is modifying files
+-> git config --global user.name "[your name here]"
+-> git config --global user.email "[your full email here]"
+* set default branch name
+-> git config --global init.default branch [name the default branch here. usually called main]
+* take note of the path on your file eplorer to the files you want to save on git
+* change directory (cd) in your terminal to the location you saved
+-> cd [path you saved]
+!-> cd c:/users/theon/documents
+* turn this directory into a repository (repo)
+* this will create a .git file in the folder on your computer. this folder may be hidden at first, so to view it you can select view at the top and select show hidden items
+-> git init
+
+* to view the status of your repo, use the following command
+-> git status
+* files will originally appear untracked -- git will not care about or save any changes made to these files
+
+* to track files type:
+-> git add [file name]
+* to remove a file from being tracked:
+-> git rm --cached [file name]
+* to track all the files (except ignored files) at once:
+-> git add .
+* or
+-> git add -A
+* or 
+-> git add --all
+
+* to create file(s) that should always be ignored by git (as in, you never want to save these files outside your personal device): 
+& create a new file in the git file location on your device 
+& rename the file (including the extension) to .gitignore and open it in a text editor
+& in the text editor, type the names of the files you want to ignore, or *.[extension] to ignore all files of .[extension] type
+& Use # to comment your file and make it legible
+!& # if I want to ignore all txt files:
+!& *.txt
+!& # but if theres only one C++ file I want to ignore 
+!& important_file.cpp
+
+* to save your repo as it is currenly on your device, we will commit these changes to git
+* if you use the status command, it will show you the files that have been modified and if you are ready to commit changes
+-> git commit -m "[message to describe the changes you made]"
+
+* when a file has been modified, the status window will show you all the changed files
+* to view the exact changes made in each file:
+-> git diff
+* original text is in red, modified file is in green
+* to save a fiile, you need to add and commit it again when you are satisfied with the changes.
+* once you add the file, it becomes "staged" until you have commited it
+* if a file is staged but not ready to be commited, you can move it back to the working files as follows:
+-> git restore --staged [file name]
+* if you commit not, this file will not be included
+* to bypass the staging phase entirely:
+-> git commit -a -m "[message]"
+* commit changes as much as possible
+
+* to remove a file from a repo and from your file directory you can either
+-> git rm "[file name]"
+Or
+& delete the file on your personal device
+
+* to restore a deleted file
+-> git restore "[file name]"
+
+* to rename or move(mv) a file through terminal
+-> git mv "[original file name.extension]" "[new file name.extension]"
+
+* to view all previous commits
+-> git log
+* or for the abbreviated version
+-> git log --oneline
+* to see specific changes between commits
+-> git log -p
+& to exit at any time, just press Q
+
+* to ammend the last entry you made (if you made a spelling mistake or something) 
+-> git commit -m "[ammended text]" --ammend
+
+* to jump to a past commit
+-> git reset [tag found through log command]
+
+* to modify past commits
+-> git rebase -i --root
+* brings you to an editor and displays all the commands you can use to modify your commits
+* to exit this view 
+-> :x
+
+* to see what branches you have in your repo and which branch you are currently on
+-> git branch
+* the branch you are on will have an asterix next to its name
+* to create a new branch
+-> git branch [branch name]
+* to switch branches
+-> git switch [branch name]
+* to create a branch and switch into it, type
+-> git switch -c [branch name]
+* if you commit changes within a branch, these will not be reflected in other branches
+* if you change branches, your device will only have items in the branch you are in (as well as any gitignore files you have saved)
+* to merge changes from a branch into the main branch, from the main branch type:
+-> git merge -m "[message]" [branch name]
+* if you have changed main since you created your branch, you will have a "merge conflict"
+* to fix these conflicts 
+& open the conflicting file(s) in a text editor
+* the text editor will have a "<<<<<<<HEAD" where the conflict begins in the main file and have a separation "=======" to show the conflict from the branch file then ends the conflicted area with ">>>>>>>UpdateText"
+& review the changes and delete the version you don't want and make any other modifications, then delete the "<<<<<<<HEAD", "=======", and ">>>>>>>UpdateText" and save the file
+* once all conflicts have been fixed, commit again
+* to delete a branch
+-git branch -d [branch name]
+
+
+

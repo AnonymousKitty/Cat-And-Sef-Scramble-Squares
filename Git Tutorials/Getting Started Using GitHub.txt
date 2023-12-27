@@ -1,0 +1,89 @@
+Getting Started Using GitHub
+
+-- Creating an account
+* go to https://github.com/ and type your email in the box next to gign up for GitHub
+* follow the instructions on the page until you get to your dashboard
+* click the "create repository" button on the left of the screen
+* name the repo whatever you want
+* add a description if you want and since this is a test repo, make it private
+* do not tick the add a README file button!
+* click "create repository" at the bottom of the page
+
+-- Pushing an existing repo from your computer to GitHub
+
+* in your command line, cd into the file location you want to push to GitHub then type the following code into the command line:
+-> git remote add origin https://github.com/[your username]/[your repo name].git
+-> git branch -M main
+-> git push -u origin main
+* to push all existing branches, type
+-> git push --all
+* to add files from elsewhere on your system, you can now drag and drop them into github, or click the add file button, or add from your system and push them to GitHub
+* you can also make changes directly from github using the edit tool, and you can commit them from the same page
+
+-- GitHub Issues
+
+* enter feature requests you want or bugs you find
+* start by giving the issue a title 
+* add comments to give further details about the issues/features
+* on the right-hand side of the screen you must assign the issue to someone (this can be yourself and/or multiple other people)
+* add a lable to organize the issues (there are many to choose from)
+* you can chose to apply a project and milestones to the issue if you want
+* when you are done, click submit new issue
+* now other people can view the issue and leave comments 
+* 
+
+-- Pull Requests
+
+* each pull request has to be approved my an admin before it gets pushed to the main branch
+* once created, admin will check the pull request and make sure everything looks good
+* under the development section on the right-hand side of a pull request, admin can tie a successful merge of this branch to a specified issue and close out the issue
+* after everything has been reviewed, click merge pull request -- confirm merge to merge the branches and close the issues 
+
+-- Actions
+
+* run tests and write programs to manage your repo
+
+-- Projects
+
+* view all the issues, pull requests, filter views and have a nicer viewing area to manage your project
+
+-- Wiki
+
+* Document your Project here
+
+-- Security
+
+* manage what happens when a vulnerability is discovered
+* set up scanning
+* manage policies
+* other fun security stuff
+
+-- Insights
+
+* view who is contributing
+* checkk to see how many issues have been closed
+* check how many commits there have been
+
+-- Settings
+
+* Collaborators tab will allow you to add more people to your project
+
+-- Releases
+
+* to create a release, click "create a new release" under the code tab
+* choose a tag or create a new tag and name it waht you want
+* give the release a title -- title suggestions are on the right hand side, but are only suggestions
+* when you are done, click publish release and the release will become available
+
+-- GitHub through the terminal
+
+* to download history from remote tracking branches, you can use the command
+-> git fetch
+* to merge this history to your device after you have fetched it, you can use the command 
+-> git merge
+* to fetch and merge at the same time:
+-> git pull
+* once you have finished modifying your files, add your files, commit the changes, and pull to make sure everything is up to date
+* after pulling, you now need to push all your changes to the main branch on GitHub, which is done by:
+-> git pull
+
