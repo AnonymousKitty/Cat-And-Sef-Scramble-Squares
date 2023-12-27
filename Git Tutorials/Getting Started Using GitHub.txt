@@ -87,3 +87,6 @@ Getting Started Using GitHub
 * after pulling, you now need to push all your changes to the main branch on GitHub, which is done by:
 -> git pull
 
+
+MAKE A CHANGE!
+
