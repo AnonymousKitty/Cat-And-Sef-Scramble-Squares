@@ -1,0 +1,13 @@
+Scramble Square Game
+Cat and Sef
+
+lets start with a timeline
+- Starting creation of the game during winter break
+- Learn how to use GitHub efficiently
+- Create git repo and download onto our machines with necessary branches
+- Learn how to use Godot -- Unity is not ideal as they will begin charging us per download
+- Create backbones
+- Design interface layout
+- Begin implementing interaface
+- School starts 
+- 
